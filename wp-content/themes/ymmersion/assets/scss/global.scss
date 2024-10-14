@@ -1,0 +1,12 @@
+@import "_parts/required/var";
+@import '_parts/required/reset';
+@import '_parts/required/general';
+
+@import '_parts/layout/header';
+@import '_parts/layout/footer';
+
+@import '_parts/pages/403';
+@import '_parts/pages/404';
+@import '_parts/pages/home';
+
+@import '_parts/required/resp';

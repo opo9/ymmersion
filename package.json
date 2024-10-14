@@ -1,0 +1,16 @@
+{
+    "name": "ymmersion",
+    "version": "1.0.0",
+    "main": "/wp-content/themes/ymmersion/assets/js/main.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "ddev start && ddev launch && npm run sass",
+        "stop": "ddev stop",
+        "sass": "sass --watch --style compressed ./wp-content/themes/ymmersion/assets/scss/global.scss:./wp-content/themes/ymmersion/assets/css/global.min.css",
+        "sort:css": "npx postcss --no-map --replace ./wp-content/themes/ymmersion/assets/scss/part/*.scss",
+        "db:export": "ddev export-db -f db.sql"
+    },
+    "dependencies": {
+        "sass": "^1.69.5"
+    }
+}

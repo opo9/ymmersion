@@ -1,0 +1,155 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+img {
+    width: 100%;
+    pointer-events: none;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: white;
+    font-family: 'Copse', sans-serif;
+    color: #000000;
+    font-weight: 400;
+    margin: 0;
+
+    &.menu-clicked {
+        width: 100vw;
+        overflow: hidden;
+    }
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+ol,
+ul {
+    margin: 0 0 0 0;
+    padding: 0;
+
+    li {
+        margin-bottom: 5px;
+
+        &::marker {
+            content: none;
+        }
+
+        ol,
+        ul {
+            margin: 0 0 0 30px;
+            padding: 0;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+
+    li {
+        counter-increment: my-awesome-counter;
+
+        &::before {
+            content: counter(my-awesome-counter) ". ";
+        }
+    }
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.video > iframe {
+    height: auto;
+}
+
+hr {
+    border-color: #000000;
+}
+
+strong {
+    font-weight: 700;
+}
+
+button:focus {
+    outline: none;
+}
+
+table {
+    width: 100%;
+}
+
+header,
+aside,
+main,
+footer,
+section,
+article {
+    position: relative;
+}
+
+.img-container {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    > video {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 17px;
+    line-height: normal;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

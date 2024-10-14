@@ -1,0 +1,29 @@
+@mixin transition($str, $delay: 0.3s, $speed: ease-in-out) {
+    -webkit-transition: #{$str} #{$delay} #{$speed};
+    -moz-transition: #{$str} #{$delay} #{$speed};
+    -ms-transition: #{$str} #{$delay} #{$speed};
+    -o-transition: #{$str} #{$delay} #{$speed};
+    transition: #{$str} #{$delay} #{$speed};
+}
+
+@mixin transform($str) {
+    -webkit-transform: #{$str};
+    -moz-transform: #{$str};
+    -ms-transform: #{$str};
+    -o-transform: #{$str};
+    transform: #{$str};
+}
+
+@mixin background-clip() {
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    -ms-background-clip: padding;
+    -o-background-clip: padding;
+    background-clip: padding-box;
+}
+
+
+
+
+
+
