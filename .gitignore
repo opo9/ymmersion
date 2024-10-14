@@ -3,6 +3,7 @@
 z.txt
 wp-config-dev.php
 wp-config-ddev.php
+wp-config.php
 
 .sass-cache
 .DS_Store
