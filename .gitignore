@@ -7,8 +7,6 @@ wp-config-ddev.php
 .sass-cache
 .DS_Store
 .idea
-*.sql
-*.sql.gz
 wp-content/uploads
 /wp-content/Downloads/
 wp-content/Downloads
