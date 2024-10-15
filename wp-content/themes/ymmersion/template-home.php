@@ -9,6 +9,7 @@ get_template_part('parts/header');
         <?php the_post(); ?>
         <main class="home bg-yellow-500">
             Home page
+            <?php echo do_shortcode(get_field("shortcode"));?>
         </main>
     <?php endwhile; ?>
 <?php endif; ?>
