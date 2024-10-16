@@ -5,6 +5,7 @@ include_once(get_template_directory() . '/init/init-acf-blocks.php');
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('copse-font', 'https://fonts.googleapis.com/css2?family=Copse&display=swap');
+    wp_enqueue_style( 'tailwind', get_template_directory_uri() . '/src/output.css', array() );
     wp_enqueue_style('style-global', get_template_directory_uri() . '/assets/css/global.min.css', [], '1.0.5');
     wp_enqueue_script('script-main', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], '1.0.5');
 });
