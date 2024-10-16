@@ -25,7 +25,7 @@ get_template_part('parts/header');
             <!-- Nos Valeurs -->
             <section class="p-24 space-y-16 w-2/3 m-auto">
                 <?php $valeurs = get_field('valeurs'); ?>
-                <?= $valeurs["titre"] ?>
+                <div class="wysiwyg--custom"><?= $valeurs["titre"] ?></div>
                 <div class="flex justify-between ">
                     <?php foreach ($valeurs["liste"] as $valeur): ?>
                         <div class="flex flex-col items-center">
