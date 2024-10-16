@@ -12,5 +12,8 @@
     },
     "dependencies": {
         "sass": "^1.69.5"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.14"
     }
 }
