@@ -1,7 +1,4 @@
 body {
-  main {
-    padding-top: 70px;
-  }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,3 +11,7 @@ h1 {
 h2 {
   font-size: 2.5rem;
 }
+.hero-bg-position-custom {
+  background-position: 0% 60%;
+}
+
