@@ -87,33 +87,21 @@ $avis = new WP_Query($args);
                     <div class="flex flex-col text-black space-y-5 w-[600px] m-auto">
                         <?php $services = get_field('services'); ?>
 
-                        <h2 class="text-center text-3xl font-bold "><?= $services["titre"] ?></h2>
-                        <div class="text-white flex justify-between gap-10 ">
-                            <?php $count = 0; ?>
-                            <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
-                                <?php if ($count >= 3) break; ?>
-
-                                <?php if (have_rows('service')) : ?>
-                                    <?php while (have_rows('service')) : the_row(); ?>
-                                        <a class="w-1/3"
-                                           href=<?= the_sub_field("url") ?>  alt=<?= the_sub_field("url") ?>>
-                                            <div class="flex flex-col justify-between h-24 p-4 <?php
-                                            if ($count === 0) {
-                                                echo 'bg-secondary';
-                                            } elseif ($count === 1) {
-                                                echo 'bg-primary';
-                                            } elseif ($count === 2) {
-                                                echo 'bg-tertiary';
-                                            };
-                                            ?>">
-                                                <?= the_sub_field('titre'); ?>
-                                                <img class="ml-auto w-5 h-auto"
-                                                     src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg"
-                                                     alt="arrow" loading="lazy">
-                                            </div>
-                                        </a>
-                                    <?php endwhile; ?>
-                                <?php endif; ?>
+        <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
+    <div class="text-white flex justify-between gap-10 ">
+        <?php $count = 0; ?>
+        <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
+            <?php if ($count >= 3) break; ?>
+                <?php if (have_rows('service')) : ?>
+                    <?php while (have_rows('service')) : the_row(); ?>
+                        <a class="w-1/3" href=<?= the_sub_field("url")?>  alt=<?= the_sub_field("url")?>>
+                        <div class="flex flex-col justify-between h-24 p-4 bg-<?php the_sub_field('couleur');?>">
+                        <?= the_sub_field('titre');?>
+                        <img class="ml-auto w-5 h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">
+                        </div>
+                </a>
+                    <?php endwhile; ?>
+                <?php endif; ?>
 
                                 <?php $count++; ?>
                             <?php endwhile; ?>
