@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .button-dark {
-  @apply bg-button-dark text-white font-bold p-3 rounded-xl;
+  @apply bg-button-dark text-white font-bold p-btn rounded-2xl;
+}
+
+.button-light {
+  @apply bg-button-light text-black font-bold p-btn rounded-2xl;
 }

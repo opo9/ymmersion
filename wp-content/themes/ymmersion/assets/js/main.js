@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const $ = jQuery; // Utiliser jQuery correctement
   const observer = new MutationObserver(function (mutationsList, observer) {
     mutationsList.forEach(function (mutation) {
       if (mutation.addedNodes.length > 0) {

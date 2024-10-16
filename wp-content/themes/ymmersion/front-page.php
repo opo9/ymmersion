@@ -5,7 +5,7 @@ get_template_part('parts/header');
 
 $args = array(
     'post_type' => 'services',
-    'posts_per_page' => -1,
+    'posts_per_page' => 3,
     'orderby' => 'date',
     'post_status' => 'publish',
     'order' => 'ASC',
@@ -32,12 +32,12 @@ $avis = new WP_Query($args);
             <section class="relative h-[524px]">
                 <?php $banniere = get_field('banniere'); ?>
                 <!-- Background Image (SVG) -->
-                <img class="absolute inset-0 w-full h-full bg-no-repeat bg-cover hero-bg-position-custom" src="<?= $banniere["background_image"]["url"] ?>" alt="Bannière SVG">
+                <img class="absolute inset-0 w-full h-full bg-no-repeat bg-cover object-cover hero-bg-position-custom" src="<?= $banniere["background_image"]["url"] ?>" alt="Bannière SVG">
                 <div class="z-10  inset-0 absolute bg-primary opacity-80"></div>
                 <div class="relative flex flex-col justify-center h-full z-20 p-24 space-y-20">
                     <h1 class="text-white text-4xl font-bold"><?= $banniere["titre"] ?></h1>
                     <div>
-                        <a class=" bg-button p-btn rounded-2xl "
+                        <a class="button-light"
                            href=<?= $banniere["bouton"]["url"] ?>><?= $banniere["bouton"]["title"] ?></a>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ $avis = new WP_Query($args);
                         <p class="text-left mt-5"><?= $droite["description"] ?></p>
                         <div class="mt-20">
                             <!-- Bouton -->
-                            <a class="bg-button p-btn rounded-2xl text-black" href=<?= $droite["bouton"]["url"] ?>><?= $droite["bouton"]["title"] ?></a>
+                            <a class="button-light" href=<?= $banniere["bouton"]["url"] ?>><?= $banniere["bouton"]["title"] ?></a>                        
                         </div>
                     </div>
                 </div>
@@ -121,30 +121,25 @@ $avis = new WP_Query($args);
                     <div class="flex flex-col text-black space-y-5 w-[600px] m-auto">
                         <?php $services = get_field('services'); ?>
 
-        <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
-    <div class="text-white flex justify-between  ">
-        <?php $count = 0; ?>
-        <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
-            <?php if ($count >= 3) break; ?>
-                <?php if (have_rows('service')) : ?>
-                    <?php while (have_rows('service')) : the_row(); ?>
-                        <a class="w-1/3" href=<?= the_sub_field("url")?>  alt=<?= the_sub_field("url")?>>
-                        <div class="flex flex-col justify-between h-24 p-4 bg-<?php the_sub_field('couleur');?>">
-                        <?= the_sub_field('titre');?>
-                        <img class="ml-auto w-5 h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">
-                        </div>
-                </a>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-
-                                <?php $count++; ?>
-                            <?php endwhile; ?>
-                        </div>
+                        <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
+                        <div class="text-white flex justify-between  ">
+                        <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
+                            <?php if (have_rows('service')) : ?>
+                                <?php $service = get_field('service'); ?>
+                                    <?php while (have_rows('service')) : the_row(); ?>
+                                    <a class="w-1/3" href="<?php echo get_permalink(get_the_ID()); ?>" alt="<?php echo get_permalink(get_the_ID()); ?>">
+                                        <div class="flex flex-col justify-between h-24 p-4 bg-<?= $service['couleur']; ?>">
+                                            <?= $service['titre']; ?>
+                                            <img class="ml-auto w-5 h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">
+                                        </div>
+                                    </a>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    </div>
                         <!-- Lien services -->
-                        <a class="ml-auto flex items-center underline cursor-pointer"><?= $services["lien"]["title"] ?>
-
+                    <a class="ml-auto flex items-center underline cursor-pointer"><?= $services["lien"]["title"] ?>
                             >
-
                         </a>
                     </div>
                     <?php wp_reset_postdata(); ?>
