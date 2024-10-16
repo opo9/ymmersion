@@ -18,10 +18,16 @@ add_filter('use_block_editor_for_post', function () {
     return false;
 }, 10, 2);
 
+function add_fontawesome_cdn() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+}
+add_action('wp_enqueue_scripts', 'add_fontawesome_cdn');
+
 add_action('after_setup_theme', function () {
     register_nav_menus(array(
-        'header' => "Header",
-        'footer' => "Footer",
+        'menu1' => "Menu1",
+        'menu2' => "Menu2",
+        'options' => "Options",
     ));
 }, 0);
 
