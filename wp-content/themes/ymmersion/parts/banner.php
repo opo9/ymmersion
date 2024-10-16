@@ -1,7 +1,15 @@
 <section class="relative flex justify-between pl-20 pt-10 h-[600px] bg-primary  text-white">
   <?php $banniere = get_field('banniere'); ?>
   <div class="w-1/2 space-y-24" >
-    <p>Accueil > Contact</p>
+    <ul class="flex gap-2">
+      <li class="hover:underline">
+        <a href=<?= get_home_url()?> > Accueil </a>
+      </li>
+       > 
+       <li class="font-bold">
+       <?=  get_the_title()?>
+      </li>
+    </ul>
     <h1>
       <?= $banniere["titre"] ?>
     </h1>
