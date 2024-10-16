@@ -10,13 +10,13 @@ module.exports = {
         background: "#EBE7E4",
         button: {
           light: "#FFFFFF",
-          dark: "#000000",
+          dark: "#233E3C",
         },
         border: "10, 4, 60",
         cards: "#FFF7F1",
       },
       padding: {
-        btn: "20px 40px",
+        btn: "15px 30px",
       },
       space: {
         service: ["20px"],

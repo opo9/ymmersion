@@ -16,6 +16,7 @@ $services = new WP_Query($args);
 
 <?php if ($services->have_posts()): ?>
   <main>
+      <?php get_template_part('parts/banner');?>
     <?php while ($services->have_posts()):
       $services->the_post(); ?>
       <?php $service = get_field('service'); ?>

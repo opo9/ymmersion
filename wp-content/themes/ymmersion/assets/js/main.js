@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: "2.5",
     centeredSlides: true,
     centerInsufficientSlides: true,
-    allowTouchMove: true,
-    simulateTouch: true,
     pagination: {
       el: ".swiper-pagination", // Cible l'élément de pagination dans le HTML
       clickable: true, // Rendre les dots cliquables

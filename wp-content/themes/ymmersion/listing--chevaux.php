@@ -100,6 +100,11 @@ if (!empty($search_term)) {
 // Exécution de la requête
 $chevaux = new WP_Query($args); // Requête pour récupérer les chevaux
 
+$min_value = 1000;
+
+if ($prix){
+    $min_value = $prix;
+}
 ?>
 
 <?php if ($chevaux->have_posts()) : ?>
@@ -117,12 +122,12 @@ $chevaux = new WP_Query($args); // Requête pour récupérer les chevaux
                     <label for="prix">Prix Maximum</label>
 
                     <div class="values">
-                        <div id="prixValue"><?php echo esc_attr($prix); ?></div>
+                        <div id="prixValue"><?php echo esc_attr($min_value); ?></div>
                         <div class="maxPrice">100000€</div>
                     </div>
 
-                    <input type="range" id="prix" name="prix" min="0" max="100000" step="1"
-                           value="<?php echo esc_attr($prix); ?>"
+                    <input type="range" id="prix" name="prix" min="1000" max="15000" step="1"
+                           value="<?php echo esc_attr($min_value); ?>"
                            oninput="document.getElementById('prixValue').textContent = this.value"/>
                 </div>
 
@@ -174,13 +179,13 @@ $chevaux = new WP_Query($args); // Requête pour récupérer les chevaux
                         </div>
 
                         <div class="mid">
-                            <div>Age : <?php echo $cheval["age"]; ?></div>
-                            <div>Taille : <?php echo $cheval["taille"]; ?></div>
+                            <div>Age : <?php echo $cheval["age"]; ?> ans</div>
+                            <div>Taille : <?php echo $cheval["taille"]; ?> cm</div>
                             <div>Race : <?php echo $cheval["race"]; ?></div>
                         </div>
 
                         <div class="bottom">
-                            <div class="price"><?php echo $cheval["prix"]; ?></div>
+                            <div class="price"><?php echo $cheval["prix"]; ?>€</div>
                             <div class="btn button-dark">voir plus</div>
                         </div>
                     </div>

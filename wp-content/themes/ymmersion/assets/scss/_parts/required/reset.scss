@@ -21,6 +21,8 @@ img {
 }
 
 body {
+  width: 100vw;
+  overflow-x: hidden;
   position: relative;
   min-height: 100vh;
   background-color: white;
@@ -175,17 +177,27 @@ a {
   }
 }
 .swiper-slide {
-  transition: transform 0.5s, opacity 0.5s;
+  transition: all 0.5s;
+  .container{
+    transition: all 0.5s;
+  }
 }
 
 /* Laisser la slide active normale */
 .swiper-slide-active {
-  transform: scale(1);
   opacity: 1;
 }
 
 /* Réduire l'opacité et la taille des slides non actives */
 .swiper-slide:not(.swiper-slide-active) > div {
-  opacity: 0.5; /* Diminuer l'opacité des slides non actives */
+  opacity: 0.5;
   padding: 3rem 2rem;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: -30px !important;
+}
+
+.swiper.swiper-initialized.swiper-horizontal{
+  overflow: visible;
 }

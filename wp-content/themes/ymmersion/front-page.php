@@ -60,7 +60,7 @@ $avis = new WP_Query($args);
             <!--  Chevaux à vendre -->
             <section class="bg-background">
                 <?php $elements = get_field('chevaux_a_vendre'); ?>
-                <div class="flex h-[400px]">
+                <div class="flex h-auto">
                     <?php $droite = $elements["droite"] ?>
                     <img class="w-1/2 object-cover" src="<?= $elements["gauche"]["image"]["url"] ?>"
                         alt="<?= $elements["gauche"]["image"]["alt"] ?>">
@@ -107,6 +107,7 @@ $avis = new WP_Query($args);
                                 </div>
                             <?php endwhile; ?>
                         <?php endif; ?>
+                        <?php wp_reset_postdata(); ?>
                     </div>
 
                     <div class="swiper-pagination bottom-0"></div>
@@ -118,16 +119,15 @@ $avis = new WP_Query($args);
             <section class="p-20 space-y-8">
                 <h2 class="text-center"></h2>
                 <?php if ($servicesPost->have_posts()) : ?>
-                    <div class="flex flex-col text-black space-y-5 w-[600px] m-auto">
+                    <div class="flex flex-col text-black space-y-5 w-[836px] m-auto">
                         <?php $services = get_field('services'); ?>
-
                         <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
                         <div class="text-white flex justify-between  ">
                         <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
                             <?php if (have_rows('service')) : ?>
                                 <?php $service = get_field('service'); ?>
                                     <?php while (have_rows('service')) : the_row(); ?>
-                                    <a class="w-1/3" href="<?php echo get_permalink(get_the_ID()); ?>" alt="<?php echo get_permalink(get_the_ID()); ?>">
+                                    <a class="w-1/4" href="<?php echo get_permalink(get_the_ID()); ?>" alt="<?php echo get_permalink(get_the_ID()); ?>">
                                         <div class="flex flex-col justify-between h-24 p-4 bg-<?= $service['couleur']; ?>">
                                             <?= $service['titre']; ?>
                                             <img class="ml-auto w-5 h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">

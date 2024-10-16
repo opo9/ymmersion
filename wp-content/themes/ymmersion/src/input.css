@@ -4,8 +4,12 @@
 
 .button-dark {
   @apply bg-button-dark text-white font-bold p-btn rounded-2xl;
+  display: block;
+  width: fit-content;
 }
 
 .button-light {
   @apply bg-button-light text-black font-bold p-btn rounded-2xl;
+  display: block;
+  width: fit-content;
 }
