@@ -7,7 +7,7 @@ module.exports = {
         primary: "#233E3C",
         secondary: "#C07239",
         tertiary: "#578480",
-        background: "#FFF7F1",
+        background: "#EBE7E4",
         button: {
           light: "#FFFFFF",
           dark: "#000000",
@@ -15,6 +15,9 @@ module.exports = {
       },
       padding: {
         btn: "20px 40px",
+      },
+      space: {
+        service: ["20px"],
       },
     },
   },
