@@ -150,7 +150,6 @@ p {
   line-height: normal;
   font-weight: 400;
   font-style: normal;
-  // text-align: center;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -174,4 +173,19 @@ a {
       color: #c07239;
     }
   }
+}
+.swiper-slide {
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Laisser la slide active normale */
+.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Réduire l'opacité et la taille des slides non actives */
+.swiper-slide:not(.swiper-slide-active) > div {
+  opacity: 0.5; /* Diminuer l'opacité des slides non actives */
+  padding: 3rem 2rem;
 }

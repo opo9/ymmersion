@@ -20,13 +20,21 @@ h2 {
 }
 
 h3 {
-  color: #FFFFFF;
+  color: #ffffff;
+  /* H3 */
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  color: #ffffff;
   /* H3 */
   font-family: "Work Sans";
   font-size: 24px;
   font-style: normal;
   // font-weight: 700;
-  line-height: normal;  
+  line-height: normal;
 }
 
 h4 {
@@ -36,6 +44,26 @@ h4 {
   font-style: normal;
   // font-weight: 500;
   line-height: normal;
+}
+
+.contact-form {
+  label {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(var(--color-border), 0.15);
+
+    &::placeholder {
+      color: rgba(var(--color-border), 0.15);
+
+      font-weight: 400;
+    }
+  }
 }
 
 .hero-bg-position-custom {

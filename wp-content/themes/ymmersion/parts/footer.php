@@ -4,8 +4,9 @@ $menu2 = wp_get_nav_menu_items("Menu2");
 $menuId = wp_get_nav_menu_object("Options")->term_id;
 $menu = get_term($menuId, 'nav_menu');
 $menulogo = get_field('logo', $menu);
-$menuReseaux = get_field('reseaux', $menu);
 
+$contact = get_field('contact', $menu);
+$blackIcons = false;
 ?>
 
 <footer class="relative text-white py-10 px-20 bg-no-repeat bg-cover bg-position-custom"
@@ -27,10 +28,13 @@ $menuReseaux = get_field('reseaux', $menu);
         </a>
       </div>
       <!-- Informations de contact -->
-      <p><strong>Adresse :</strong> 77 Rue Val d’arros 65350 Cabanac</p>
-      <p><strong>Horaires :</strong> Lun - Dim 9h / 18h</p>
-      <p><strong>Mail :</strong> email@mail.fr</p>
-      <p><strong>Téléphone :</strong> 04.92.65.71.34</p>
+       <ul class="space-y-5">
+       <li><strong>Adresse :</strong> <?= $contact["adresse"]  ?></li>
+      <li><strong>Horaires :</strong> <?= $contact["horaires"]  ?></li>
+      <li><strong>Mail :</strong> <?= $contact["mail"]  ?></li>
+      <li><strong>Téléphone :</strong> <?= $contact["telephone"]  ?></li>
+       </ul>
+     
     </div>
     <div>
       <h4 class="font-bold mb-4">Menu</h4>
@@ -56,25 +60,8 @@ $menuReseaux = get_field('reseaux', $menu);
     <!-- Section 4: Suivez-nous -->
     <div>
       <h4 class="font-bold mb-4">Nous suivre</h4>
-      <ul class="space-y-4">
-        <?php foreach ($menuReseaux as $reseau): ?>
-          <?php if (!empty($reseau['image']) || !empty($reseau['lien'])): ?>
-            <li class="flex items-center space-x-4">
-              <img class="w-8" height="auto" src="<?php echo esc_url($reseau['image']['url']); ?>"
-                alt="<?php echo esc_attr($reseau['image']['alt']); ?>"
-                title="<?php echo esc_attr($reseau['image']['title']); ?>" loading="lazy">
-              <span>
-                <a href="<?php echo esc_url($reseau['lien']['url']); ?>"
-                  title="<?php echo esc_attr($reseau['lien']['title']); ?>"
-                  target="<?php echo esc_attr($reseau['lien']['target']); ?>" class="hover:text-gray-400">
-                  <?php echo esc_html($reseau['lien']['title']); ?>
-                </a>
-              </span>
-            </li>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      </ul>
-
+     
+        <?php include "socialmedia.php"; ?>
     </div>
   </div>
 </footer>

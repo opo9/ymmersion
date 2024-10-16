@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-dark {
+  @apply bg-button-dark text-white font-bold p-3 rounded-xl;
+}

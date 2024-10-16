@@ -11,7 +11,9 @@ module.exports = {
         button: {
           light: "#FFFFFF",
           dark: "#000000",
-        }
+        },
+        border: "10, 4, 60",
+        cards: "#FFF7F1",
       },
       padding: {
         btn: "20px 40px",
@@ -21,5 +23,28 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addBase, theme }) {
+      const colors = theme("colors");
+      const variables = Object.keys(colors)
+        .map((color) => {
+          if (typeof colors[color] === "string") {
+            return `--color-${color}: ${colors[color]};`;
+          } else {
+            return Object.keys(colors[color])
+              .map((shade) => {
+                return `--color-${color}-${shade}: ${colors[color][shade]};`;
+              })
+              .join("\n");
+          }
+        })
+        .join("\n");
+
+      addBase({
+        ":root": {
+          [variables]: variables,
+        },
+      });
+    },
+  ],
 };

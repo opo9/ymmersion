@@ -27,7 +27,7 @@ $avis = new WP_Query($args);
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : ?>
         <?php the_post(); ?>
-        <main class="home bg-background ">
+        <main class="home bg-background">
             <!-- Bannière -->
             <section class="relative h-[524px]">
                 <?php $banniere = get_field('banniere'); ?>
@@ -75,6 +75,46 @@ $avis = new WP_Query($args);
                     </div>
                 </div>
             </section>
+
+             <!-- Avis -->
+             <section class="py-16">
+                <h2 class="text-center">
+                    <?php echo get_field("temoignages")["titre"]; ?>
+                </h2>
+
+                <div class="swiper" id="slider-home">
+                    <div class="swiper-wrapper flex items-center">
+                        <?php if ($avis->have_posts()) : ?>
+                            <?php while ($avis->have_posts()) : ?>
+                                <?php $avis->the_post(); ?>
+                                <?php $slide = get_field("avis"); ?>
+                                <div class="swiper-slide">
+                                    <div class="container bg-cards flex flex-col items-center rounded-3xl p-8 space-y-3">
+                                        <img class="w-5" src="/wp-content/themes/ymmersion/assets/images/svg/quote.svg" alt="">
+                                
+
+                                        <!-- <div class="titre">
+                                            <?php echo $slide["titre"]; ?>
+                                        </div> -->
+
+                                        <h4 class="desc text-center">
+                                            <?php echo $slide["description"]; ?>
+                                        </h4>
+
+                                        <div class="author">
+                                            <?php echo $slide["auteur"]; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="swiper-pagination bottom-0"></div>
+                </div>
+            </section>
+
+
             <!-- Services -->
             <section class="p-20 space-y-8">
                 <h2 class="text-center"></h2>
@@ -83,7 +123,7 @@ $avis = new WP_Query($args);
                         <?php $services = get_field('services'); ?>
 
         <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
-    <div class="text-white flex justify-between gap-10 ">
+    <div class="text-white flex justify-between  ">
         <?php $count = 0; ?>
         <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
             <?php if ($count >= 3) break; ?>
@@ -113,44 +153,7 @@ $avis = new WP_Query($args);
                     <p>Aucun service trouvé.</p>
                 <?php endif; ?>
             </section>
-            <!-- Avis -->
-            <section class="avis">
-                <div class="title">
-                    <?php echo get_field("temoignages")["titre"]; ?>
-                </div>
-
-                <div class="swiper" id="slider-home">
-                    <div class="swiper-wrapper">
-                        <?php if ($avis->have_posts()) : ?>
-                            <?php while ($avis->have_posts()) : ?>
-                                <?php $avis->the_post(); ?>
-                                <?php $slide = get_field("avis"); ?>
-                                <div class="swiper-slide">
-                                    <div class="container">
-                                        <div class="logo">
-                                            “
-                                        </div>
-
-                                        <div class="titre">
-                                            <?php echo $slide["titre"]; ?>
-                                        </div>
-
-                                        <div class="desc">
-                                            <?php echo $slide["description"]; ?>
-                                        </div>
-
-                                        <div class="author">
-                                            <?php echo $slide["auteur"]; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </div>
-
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
+           
         </main>
     <?php endwhile; endif; ?>
 
