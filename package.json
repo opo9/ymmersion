@@ -6,7 +6,7 @@
     "scripts": {
         "start": "ddev start && ddev launch && npm run sass",
         "stop": "ddev stop",
-        "tailwind": "npx tailwindcss -i ./wp-content/themes/ymmersion/src/input.css -o ./wp-content/themes/ymmersion/src/output.css --watch",
+        "tailwind": "cd wp-content/themes/ymmersion && npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
         "sass": "sass --watch --style compressed ./wp-content/themes/ymmersion/assets/scss/global.scss:./wp-content/themes/ymmersion/assets/css/global.min.css",
         "sort:css": "npx postcss --no-map --replace ./wp-content/themes/ymmersion/assets/scss/part/*.scss",
         "db:export": "ddev export-db -f db.sql"
