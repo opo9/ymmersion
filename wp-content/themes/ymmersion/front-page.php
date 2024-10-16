@@ -11,7 +11,7 @@ $args = array(
     'order' => 'ASC',
 );
 
-$services = new WP_Query($args);
+$servicesPost = new WP_Query($args);
 ?>
 
 <?php if (have_posts()) : ?>
@@ -73,16 +73,20 @@ $services = new WP_Query($args);
             <h2 class="text-center"></h2>
      
 
-            <?php if ($services->have_posts()) : ?>
-    <div class="text-white flex justify-between gap-10 w-max m-auto">
+            <?php if ($servicesPost->have_posts()) : ?>
+    <div class="flex flex-col text-black space-y-5 w-[600px] m-auto">
+    <?php $services = get_field('services');?>
+
+        <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
+    <div class="text-white flex justify-between gap-10 ">
         <?php $count = 0; ?>
-        <?php while ($services->have_posts()) : $services->the_post(); ?>
+        <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
             <?php if ($count >= 3) break; ?>
             
                 <?php if (have_rows('service')) : ?>
                     <?php while (have_rows('service')) : the_row(); ?>
-                        <a href=<?= the_sub_field("url")?>  alt=<?= the_sub_field("url")?>>
-                        <div class="flex flex-col justify-between h-24 w-48 p-4 <?php
+                        <a class="w-1/3" href=<?= the_sub_field("url")?>  alt=<?= the_sub_field("url")?>>
+                        <div class="flex flex-col justify-between h-24 p-4 <?php
                              if ($count === 0) {
                                 echo 'bg-secondary';
                             } elseif ($count === 1) {
@@ -92,7 +96,7 @@ $services = new WP_Query($args);
                             };
                         ?>">
                         <?= the_sub_field('titre');?>
-                        <img class="ml-auto w-5  h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">
+                        <img class="ml-auto w-5 h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">
                         </div>
                 </a>
                     <?php endwhile; ?>
@@ -101,7 +105,13 @@ $services = new WP_Query($args);
             <?php $count++; ?>
         <?php endwhile; ?>
     </div>
+    <!-- Lien services -->
+    <a class="ml-auto flex items-center underline cursor-pointer"><?= $services["lien"]["title"]?>
+  
+   >
 
+</a>
+    </div>
     <?php wp_reset_postdata(); ?>
 <?php else : ?>
     <p>Aucun service trouvé.</p>
