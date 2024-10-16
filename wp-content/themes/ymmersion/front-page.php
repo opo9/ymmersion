@@ -32,8 +32,7 @@ $avis = new WP_Query($args);
             <section class="relative h-[524px]">
                 <?php $banniere = get_field('banniere'); ?>
                 <!-- Background Image (SVG) -->
-                <img class="absolute inset-0 w-full h-full bg-no-repeat bg-cover hero-bg-position-custom"
-                     style="background-image: url('<?= $banniere["background_image"]["url"] ?>" alt="Bannière SVG">
+                <img class="absolute inset-0 w-full h-full bg-no-repeat bg-cover hero-bg-position-custom" src="<?= $banniere["background_image"]["url"] ?>" alt="Bannière SVG">
                 <div class="z-10  inset-0 absolute bg-primary opacity-80"></div>
                 <div class="relative flex flex-col justify-center h-full z-20 p-24 space-y-20">
                     <h1 class="text-white text-4xl font-bold"><?= $banniere["titre"] ?></h1>
