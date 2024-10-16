@@ -36,25 +36,21 @@ get_template_part('parts/header');
                 </div>
             </section>
             <!--  Chevaux à vendre -->
-            <section class="bg-background ">
+            <section class="bg-background">
                 <?php $elements = get_field('chevaux_a_vendre'); ?>
-
-                <!-- <?= var_dump($chevaux_a_vendre) ?> -->
                 <div class="flex h-[400px]">
                     <?php $droite = $elements["droite"] ?>
-                    <img class="w-1/2" src="<?= $elements["gauche"]["image"]["url"] ?>"
+                    <img class="w-1/2 object-cover" src="<?= $elements["gauche"]["image"]["url"] ?>"
                         alt="<?= $elements["gauche"]["image"]["alt"] ?>">
                     <div class="bg-primary w-1/2 text-white p-20 ">
-                        <h2><?= $droite["titre"] ?></h2>
+                        <h2 class="text-white"><?= $droite["titre"] ?></h2>
                         <p class="text-left mt-5"><?= $droite["description"] ?></p>
                         <div class="mt-20">
                             <!-- Bouton -->
                             <a class="bg-button p-btn rounded-2xl text-black" href=<?= $droite["bouton"]["url"] ?>><?= $droite["bouton"]["title"] ?></a>
-                            <div>
-                            </div>
                         </div>
-
                     </div>
+                </div>
             </section>
             <!-- Services -->
             <?php $services = get_field('services'); ?>

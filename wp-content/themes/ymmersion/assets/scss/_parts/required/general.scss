@@ -8,10 +8,36 @@ h1 {
   font-size: 3.5rem;
   width: 35rem;
 }
+
 h2 {
-  font-size: 2.5rem;
+  color: #000;
+  /* H2 */
+  font-family: "Work Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
+
+h3 {
+  color: #FFFFFF;
+  /* H3 */
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;  
+}
+
+h4 {
+  color: #221f20f2;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .hero-bg-position-custom {
   background-position: 0% 60%;
 }
-

@@ -8,7 +8,10 @@ module.exports = {
         secondary: "#C07239",
         tertiary: "#578480",
         background: "#FFF7F1",
-        button: "#FFFFFF",
+        button: {
+          light: "#FFFFFF",
+          dark: "#000000",
+        }
       },
       padding: {
         btn: "20px 40px",
