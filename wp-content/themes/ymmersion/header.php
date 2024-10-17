@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <head>
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/assets/images/svg/fav1.svg'; ?>">
     <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <title>Page <?php echo get_the_title(); ?> des Ecuries du Pouey</title>

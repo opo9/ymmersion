@@ -147,7 +147,13 @@ $avis = new WP_Query($args);
                     <p>Aucun service trouvé.</p>
                 <?php endif; ?>
             </section>
-           
+           <section class="p-20 bg-secondary space-y-5">
+               <div class="title">
+                   <h3 class="text-white">Les dernières actualitées du Pouey</h3>
+               </div>
+
+               <div class='sk-ww-facebook-page-posts' data-embed-id='25476497'></div><script src='https://widgets.sociablekit.com/facebook-page-posts/widget.js' async defer></script>
+           </section>
         </main>
     <?php endwhile; endif; ?>
 
