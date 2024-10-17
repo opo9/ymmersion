@@ -28,7 +28,7 @@ $blackIcons = false;
         </a>
       </div>
       <!-- Informations de contact -->
-      <ul class="space-y-5">
+      <ul class="space-y-7">
         <li><strong>Adresse :</strong> <?= $contact["adresse"] ?></li>
         <li><strong>Horaires :</strong> <?= $contact["horaires"] ?></li>
         <li><strong>Mail :</strong> <?= $contact["mail"] ?></li>
@@ -38,7 +38,7 @@ $blackIcons = false;
     </div>
     <div class="col-span-2">
       <h4 class="font-bold mb-4">Menu</h4>
-      <ul>
+      <ul class="space-y-7">
         <?php
         foreach ($menu1 as $item) {
           echo '<li><a href="' . esc_url($item->url) . '" title="' . esc_attr($item->attr_title) . '" class="hover:text-gray-400">' . esc_html($item->title) . '</a></li>';
@@ -48,7 +48,7 @@ $blackIcons = false;
     </div>
     <div class="col-span-2">
       <h4 class="font-bold mb-4">Liens</h4>
-      <ul>
+      <ul class="space-y-7">
         <?php
         foreach ($menu2 as $item) {
           echo '<li><a href="' . esc_url($item->url) . '" title="' . esc_attr($item->attr_title) . '" class="hover:text-gray-400">' . esc_html($item->title) . '</a></li>';
