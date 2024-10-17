@@ -15,9 +15,9 @@ $blackIcons = false;
   <div class="absolute inset-0 bg-primary opacity-80"></div>
 
   <!-- Contenu du footer -->
-  <div class="relative grid grid-cols-4 gap-10 py-10 px-20 z-10">
+  <div class="relative grid grid-cols-10 gap-10 py-10 px-20 z-10">
     <!-- Section 1: Logo et informations de contact -->
-    <div>
+    <div class="col-span-4">
       <!-- Logo -->
       <div class="mb-4">
         <!-- Remplacez cela par le logo réel -->
@@ -28,15 +28,15 @@ $blackIcons = false;
         </a>
       </div>
       <!-- Informations de contact -->
-       <ul class="space-y-5">
-       <li><strong>Adresse :</strong> <?= $contact["adresse"]  ?></li>
-      <li><strong>Horaires :</strong> <?= $contact["horaires"]  ?></li>
-      <li><strong>Mail :</strong> <?= $contact["mail"]  ?></li>
-      <li><strong>Téléphone :</strong> <?= $contact["telephone"]  ?></li>
-       </ul>
-     
+      <ul class="space-y-5">
+        <li><strong>Adresse :</strong> <?= $contact["adresse"] ?></li>
+        <li><strong>Horaires :</strong> <?= $contact["horaires"] ?></li>
+        <li><strong>Mail :</strong> <?= $contact["mail"] ?></li>
+        <li><strong>Téléphone :</strong> <?= $contact["telephone"] ?></li>
+      </ul>
+
     </div>
-    <div>
+    <div class="col-span-2">
       <h4 class="font-bold mb-4">Menu</h4>
       <ul>
         <?php
@@ -46,7 +46,7 @@ $blackIcons = false;
         ?>
       </ul>
     </div>
-    <div>
+    <div class="col-span-2">
       <h4 class="font-bold mb-4">Liens</h4>
       <ul>
         <?php
@@ -58,10 +58,10 @@ $blackIcons = false;
     </div>
 
     <!-- Section 4: Suivez-nous -->
-    <div>
+    <div class="col-span-2">
       <h4 class="font-bold mb-4">Nous suivre</h4>
-     
-        <?php include "socialmedia.php"; ?>
+
+      <?php include "socialmedia.php"; ?>
     </div>
   </div>
 </footer>
