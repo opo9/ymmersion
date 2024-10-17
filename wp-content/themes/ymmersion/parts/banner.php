@@ -18,7 +18,7 @@
     </h3>
   </div>
   <div class="flex gap-10  ">
-    <img class="relative w-[360px] h-[490px] -bottom-24 object-cover z-10" src=<?= $banniere["image1"]["url"] ?> alt=<?= $banniere["image1"]["url"] ?>>
-    <img class="w-[320px] h-[490px] object-cover" src=<?= $banniere["image2"]["url"] ?> alt=<?= $banniere["image2"]["url"] ?>>
+    <img class="relative w-[360px] h-[490px] grayscale -bottom-24 object-cover z-10" src=<?= $banniere["image1"]["url"] ?> alt=<?= $banniere["image1"]["url"] ?>>
+    <img class="w-[320px] h-[490px] grayscale object-cover " src=<?= $banniere["image2"]["url"] ?> alt=<?= $banniere["image2"]["url"] ?>>
   </div>
 </section>
