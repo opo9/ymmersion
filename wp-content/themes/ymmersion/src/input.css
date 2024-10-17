@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .button-dark {
-  @apply bg-button-dark text-white font-bold p-btn rounded-3xl hover:bg-tertiary transition-all;
+  @apply bg-button-dark text-white font-bold p-btn rounded-3xl;
   display: block;
   width: fit-content;
 }
 
 .button-light {
-  @apply bg-button-light text-black font-bold p-btn rounded-3xl hover:bg-tertiary hover:text-white transition-all;
+  @apply bg-button-light text-black font-bold p-btn rounded-3xl;
   display: block;
   width: fit-content;
 }

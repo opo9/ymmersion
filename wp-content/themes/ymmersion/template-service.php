@@ -39,7 +39,7 @@ $services = new WP_Query($args);
         <section >
           <div class="flex h-[501px]">
             <img class="w-1/2 object-cover" src="<?= $service["image"]["url"] ?>" alt="<?= $service["image"]["alt"] ?>">
-            <div class="flex flex-col justify-center w-1/2 text-white p-20 bg-tertiary ">
+            <div class="flex flex-col justify-center w-1/2 text-white p-20 ">
               <div class="space-y-service">
                 <h2><?= $service["titre"] ?></h2>
                 <h4><?= $service["description"] ?></h4>
