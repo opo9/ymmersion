@@ -29,10 +29,28 @@ $blackIcons = false;
       </div>
       <!-- Informations de contact -->
       <ul class="space-y-7">
-        <li><strong>Adresse :</strong> <?= $contact["adresse"] ?></li>
-        <li><strong>Horaires :</strong> <?= $contact["horaires"] ?></li>
-        <li><strong>Mail :</strong> <?= $contact["mail"] ?></li>
-        <li><strong>Téléphone :</strong> <?= $contact["telephone"] ?></li>
+        <li>
+          <strong>Adresse :</strong> 
+          <a target="_blank" class="hover:underline"  href="https://www.google.com/maps/place/Du+Pouey/@43.268344,0.226641,17z/data=!4m6!3m5!1s0x12a9c9365c8f3e87:0xd0bafca218a5ae92!8m2!3d43.268344!4d0.2266413!16s%2Fg%2F1tsgyws9?hl=en&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D">
+            <?= $contact["adresse"] ?>
+</a>
+        </li>
+        <li>
+          <strong>Horaires :</strong>
+           <?= $contact["horaires"] ?>
+        </li>
+        <li>
+          <strong>Mail :</strong> 
+          <a class="hover:underline" href="mailto:<?=$infos["mail"]?>" >
+                                    <?= $contact["mail"] ?>
+                                </a>
+        </li>
+        <li>
+          <strong>Téléphone :</strong> 
+          <a class="hover:underline" href="tel:<?=$infos["telephone"]?>">
+                                    <?= $contact["telephone"] ?>
+                                </a>
+        </li>
       </ul>
 
     </div>
