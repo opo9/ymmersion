@@ -167,7 +167,7 @@ if ($prix){
         <div class="chevaux">
             <?php while ($chevaux->have_posts()) : $chevaux->the_post(); ?>
                 <?php $cheval = get_field("cheval"); ?>
-                <div class="cheval-item hover:shadow-md">
+                <div class="cheval-item">
                     <div class="img">
                         <img class="w-20" src="<?= $cheval["image"]["url"] ?>" alt="<?= $cheval["image"]["alt"] ?>">
                     </div>
