@@ -3,13 +3,24 @@
 @tailwind utilities;
 
 .button-dark {
-  @apply bg-button-dark text-white font-bold p-btn rounded-2xl;
+  @apply bg-button-dark text-white font-bold p-btn rounded-3xl;
   display: block;
   width: fit-content;
 }
 
 .button-light {
-  @apply bg-button-light text-black font-bold p-btn rounded-2xl;
+  @apply bg-button-light text-black font-bold p-btn rounded-3xl;
   display: block;
   width: fit-content;
+}
+
+.primary {
+  @apply bg-primary;
+}
+.secondary {
+  @apply bg-secondary;
+}
+
+.tertiary {
+  @apply bg-tertiary;
 }

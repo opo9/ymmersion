@@ -47,9 +47,9 @@ $avis = new WP_Query($args);
                 <?php $valeurs = get_field('valeurs'); ?>
 
                 <div class="wysiwyg--custom"><?= $valeurs["titre"] ?></div>
-                <div class="flex justify-between ">
+                <div class="flex justify-between  ">
                     <?php foreach ($valeurs["liste"] as $valeur): ?>
-                        <div class="flex flex-col items-center">
+                        <div class="flex flex-col items-center gap-3">
                             <img class="w-20" src="<?= $valeur["image"]["url"] ?>" alt="<?= $valeur["image"]["alt"] ?>">
                             <p><?= $valeur["titre"] ?></p>
 
@@ -121,14 +121,14 @@ $avis = new WP_Query($args);
                 <?php if ($servicesPost->have_posts()) : ?>
                     <div class="flex flex-col text-black space-y-5 w-[836px] m-auto">
                         <?php $services = get_field('services'); ?>
-                        <h2 class="text-center text-3xl font-bold "><?= $services["titre"]?></h2>
+                        <h2 class="text-center text-3xl font-bold mb-5"><?= $services["titre"]?></h2>
                         <div class="text-white flex justify-between  ">
                         <?php while ($servicesPost->have_posts()) : $servicesPost->the_post(); ?>
                             <?php if (have_rows('service')) : ?>
                                 <?php $service = get_field('service'); ?>
                                     <?php while (have_rows('service')) : the_row(); ?>
                                     <a class="w-1/4" href="<?php echo get_permalink(get_the_ID()); ?>" alt="<?php echo get_permalink(get_the_ID()); ?>">
-                                        <div class="flex flex-col justify-between h-24 p-4 bg-<?= $service['couleur']; ?>">
+                                        <div class="flex flex-col justify-between h-24 p-4 <?= $service['couleur']; ?>">
                                             <?= $service['titre']; ?>
                                             <img class="ml-auto w-5 h-auto" src="/wp-content/themes/ymmersion/assets/images/svg/arrow.svg" alt="arrow" loading="lazy">
                                         </div>
