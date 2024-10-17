@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        banner: "#112422",
         primary: "#233E3C",
         secondary: "#C07239",
         tertiary: "#578480",
@@ -16,7 +17,7 @@ module.exports = {
         cards: "#FFF7F1",
       },
       padding: {
-        btn: "15px 30px",
+        btn: "12px 50px",
       },
       space: {
         service: ["20px"],

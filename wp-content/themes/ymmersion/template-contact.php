@@ -29,7 +29,8 @@ $blackIcons = true;
                         </div>
 
                         <div class="w-3/5">
-                            <?= $contact["googlemap"] ?>
+                        <iframe src="<?= $contact["googlemap"] ?>" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            
                         </div>
                     </div>
                 </section>
@@ -41,9 +42,24 @@ $blackIcons = true;
 
 
                         <ul class="flex justify-between flex-wrap w-3/4">
-                            <li class="w-1/2"><strong class="block">Mail : </strong><?= $infos["mail"] ?></li>
-                            <li class="w-1/2"><strong class="block">Téléphone : </strong><?= $infos["telephone"] ?></li>
-                            <li class="w-1/2"><strong class="block">Adresse : </strong><?= $infos["adresse"] ?></li>
+                            <li class="w-1/2 ">
+                                <strong class="block">Mail : </strong>
+                                <a class="hover:underline" href="mailto:<?=$infos["mail"]?>" >
+                                    <?= $infos["mail"] ?>
+                                </a>
+                            </li>
+                            <li class="w-1/2">
+                                <strong class="block">Téléphone : </strong>
+                                <a class="hover:underline" href="tel:<?=$infos["telephone"]?>">
+                                    <?= $infos["telephone"] ?>
+                                </a>
+                            </li>
+                            <li class="w-1/2">
+                                <strong class="block">Adresse : </strong>
+                                <a target="_blank" class="hover:underline"  href="https://www.google.com/maps/place/Du+Pouey/@43.268344,0.226641,17z/data=!4m6!3m5!1s0x12a9c9365c8f3e87:0xd0bafca218a5ae92!8m2!3d43.268344!4d0.2266413!16s%2Fg%2F1tsgyws9?hl=en&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D">
+                                    <?= $infos["adresse"] ?>
+                                </a>
+                            </li>
                             <li class="w-1/2"><strong class="block">Horaires : </strong><?= $infos["horaires"] ?></li>
                         </ul>
 
