@@ -34,27 +34,25 @@ $services = new WP_Query($args);
             </div>
           </div>
         </section>
-      <?php endif; ?>
+      <?php endif; ?>    
       <?php if ($service['type_affichage'] == 'image'): ?>
-        <section class="h-[501px]">
-          <div class="flex">
+        <section >
+          <div class="flex h-[501px]">
             <img class="w-1/2 object-cover" src="<?= $service["image"]["url"] ?>" alt="<?= $service["image"]["alt"] ?>">
-            <div class="bg-tertiary w-1/2 text-white p-20 ">
+            <div class="flex flex-col justify-center w-1/2 text-white p-20 ">
               <div class="space-y-service">
                 <h2><?= $service["titre"] ?></h2>
                 <h4><?= $service["description"] ?></h4>
               </div>
-              <div class="mt-20">
-                <div class="flex justify-end mt-8">
+              <div class="mt-10">
                   <a href="<?php echo get_post_permalink(get_the_ID()) ?>" class="button-dark">En savoir plus</a>
-                </div>
               </div>
             </div>
           </div>
         </section>
       <?php endif; ?>
       <?php if ($service['type_affichage'] == 'image_padding'): ?>
-        <section class="p-24">
+        <section class="p-28">
           <div class="flex items-center justify-between px-56 z-20 space-y-20">
             <!-- Contenu texte -->
             <div class="w-1/2 pr-10">

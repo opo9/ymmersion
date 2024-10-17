@@ -60,7 +60,7 @@ $avis = new WP_Query($args);
             <!--  Chevaux à vendre -->
             <section class="bg-background">
                 <?php $elements = get_field('chevaux_a_vendre'); ?>
-                <div class="flex h-auto">
+                <div class="flex h-[400px]">
                     <?php $droite = $elements["droite"] ?>
                     <img class="w-1/2 object-cover" src="<?= $elements["gauche"]["image"]["url"] ?>"
                         alt="<?= $elements["gauche"]["image"]["alt"] ?>">
